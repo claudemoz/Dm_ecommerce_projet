@@ -1,4 +1,13 @@
 <script setup lang="ts">
+import type { Page } from '@/interfaces';
+
+    defineProps<{
+        page: Page
+    }>()
+
+   const emit =  defineEmits<{
+    (e: 'navigate', page: Page): void
+   }>()
 
 </script>
 
@@ -9,8 +18,8 @@
             <span class="logo">VueShop</span>
         </a>
         <ul class="d-flex flex-row  flex-fill">
-            <li class="mr-10"><a href="#">Boutique</a></li>
-            <li><a href="#">Admin</a></li>
+            <li class="mr-10" :class="{active: page == 'Boutique'}"><a @click="emit('navigate', 'Boutique')">Boutique</a></li>
+            <li><a  @click="emit('navigate', 'Admin')"  :class="{active: page == 'Admin'}">Admin</a></li>
         </ul>
         <ul class="d-flex flex-row">
             <li class="mr-10"><a href="">Inscription</a></li>
@@ -26,6 +35,7 @@ header{
     position: sticky;
     top: 0;
     a{
+        cursor: pointer;
         color: var(--text-primary-color);
         img{
             width: 20px;
@@ -36,5 +46,9 @@ header{
             font-size: 20px;
         }
     }
+}
+
+.active{
+    text-decoration: underline;
 }
 </style>

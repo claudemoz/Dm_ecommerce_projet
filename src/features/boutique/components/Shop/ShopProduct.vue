@@ -6,21 +6,21 @@ defineProps<{
 }>()
 
 const emit = defineEmits<{
-  (e: 'addProductToCart', ProductId: number): void
+  (e: 'addProductToCart', ProductId: string): void
 }>()
 </script>
 
 <template>
     <div class="product d-flex flex-column">
         <img :src="product.image" alt="macbook_pro" class="product-image">
-        <div class="p-10 d-flex flex-column">
-            <h4>{{ product.title }}</h4>
+        <div class="p-10">
+            <div class="d-flex flex-row justify-content-between">
+                <h4>{{ product.title }}</h4>
+                <strong class="">{{ product.price}} €</strong>
+            </div>
             <p>{{ product.description }}</p>
         </div>
-        <div class="px-5 d-flex flex-row align-items-center ">
-            <strong class="flex-fill">Prix: {{ product.price}} €</strong>
-            <button class="btn btn-primary" @click="emit('addProductToCart', product.id)">Ajouter au panier</button>
-        </div>
+        <button class="mx-5 btn btn-primary" @click="emit('addProductToCart', product._id)">Ajouter au panier</button>
     </div>
 </template>
 

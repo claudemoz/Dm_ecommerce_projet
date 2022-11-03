@@ -12,7 +12,7 @@ const totalPrice = computed(()=>props.cart.reduce((acc, product)=>{
 }, 0))
 
 const emit = defineEmits<{
-  (e: "deleteProductToCart", ProductId: number): void;
+  (e: "deleteProductToCart", ProductId: string): void;
 }>();
 
 </script>
