@@ -6,13 +6,13 @@ defineProps<{
 }>()
 
 const emit = defineEmits<{
-    (e: 'deleteProductToCart', ProductId: number ): void
+    (e: 'deleteProductToCart', ProductId: string ): void
 }>()
 </script>
 
 <template>
     <div class="d-flex flex-column">
-        <CartProduct v-for="product of cart" :product="product" @deleteProductToCart="emit('deleteProductToCart', $event)"/>
+        <CartProduct v-for="product of cart"  :product="product" @deleteProductToCart="emit('deleteProductToCart', $event)"/>
     </div>
 </template>
 

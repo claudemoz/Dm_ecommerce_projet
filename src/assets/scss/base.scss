@@ -51,7 +51,8 @@ body{
   background-color: var(--gray-1);
 }
 
-input{
+input,textarea, select{
+  outline-color: var(--primary-1);
   border: var(--border);
   border-radius: var(--border-radius);
   padding: 8px 15px;
@@ -72,6 +73,9 @@ input{
 
 .justify-content-center{
   justify-content: center;
+}
+.justify-content-between{
+  justify-content: space-between;
 }
 
 .align-items-center{
@@ -126,6 +130,9 @@ input{
 .mx-2{
   margin: 0px 2px;
 }
+.mx-5{
+  margin: 0px 5px;
+}
 .mr-5{
   margin-right: 5px;
 }
@@ -142,16 +149,26 @@ input{
   margin-left: 20px;
 }
 
+.w-100{
+  width: 100px;
+}
 // button
 
 .btn{
-  padding: 8px 15px;
+  padding: 8px 16px;
   border: 0;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 16px;
-  font-weight: 550;
+  font-size: 14px;
+  font-weight: bold;
   transition: background 0.2s;
+}
+
+.form-error{
+  color: var(--danger-1);
+}
+.text-danger{
+  color: var(--danger-1);
 }
 
 .btn-primary{
@@ -175,5 +192,12 @@ input{
   &:hover{
     background: var(--success-2);
   }
+}
+
+.card{
+  border: var(--border);
+  border-radius: var(--border-radius);
+  background-color: white;
+  padding: 30px;
 }
 
